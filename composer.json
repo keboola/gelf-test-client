@@ -1,0 +1,6 @@
+{
+    "require": {
+        "graylog2/gelf-php": "^1.4",
+        "react/datagram": "^1.1"
+    }
+}

@@ -1,0 +1,11 @@
+server:
+  image: "keboola/gelf-test-server"
+  ports:
+    - 12201:12201/udp  
+client:
+  image: "keboola/gelf-test-client"
+  links:
+    - server:log-server
+  environment:
+    KBC_LOGGER_ADDR: log-server
+    KBC_LOGGER_PORT: 12201
