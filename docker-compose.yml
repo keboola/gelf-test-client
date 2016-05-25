@@ -1,9 +1,9 @@
 server:
-  image: "keboola/gelf-test-server"
+  image: "quay.io/keboola/gelf-test-server"
   ports:
     - 12201:12201/udp  
 client:
-  image: "keboola/gelf-test-client"
+  image: "quay.io/keboola/gelf-test-client"
   links:
     - server:log-server
   environment:
