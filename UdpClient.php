@@ -1,5 +1,8 @@
 <?php
 
+echo "Client started";
+sleep(1);
+
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
 $transport = new Gelf\Transport\UdpTransport(getenv('KBC_LOGGER_ADDR'), getenv('KBC_LOGGER_PORT'));
