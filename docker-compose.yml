@@ -1,11 +1,13 @@
 server:
-  image: "quay.io/keboola/gelf-test-server"
+  image: "quay.io/keboola/docs-example-logging-mock-server:master"
   ports:
-    - 12201:12201/udp  
+    - 12202:12202/udp
+  environment:
+    SERVER_TYPE: udp
 client:
   image: "quay.io/keboola/gelf-test-client"
   links:
     - server:log-server
   environment:
     KBC_LOGGER_ADDR: log-server
-    KBC_LOGGER_PORT: 12201
+    KBC_LOGGER_PORT: 12202
